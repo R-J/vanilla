@@ -246,7 +246,7 @@ class PostController extends VanillaController {
 
                         if ($DiscussionID > 0) {
                             if ($DraftID > 0) {
-                                $this->DraftModel->delete($DraftID);
+                                $this->DraftModel->deleteID($DraftID);
                             }
                         }
                         if ($DiscussionID == SPAM || $DiscussionID == UNAPPROVED) {
@@ -665,7 +665,7 @@ class PostController extends VanillaController {
 
                 $this->Form->setValidationResults($this->CommentModel->validationResults());
                 if ($CommentID > 0 && $DraftID > 0) {
-                    $this->DraftModel->delete($DraftID);
+                    $this->DraftModel->deleteID($DraftID);
                 }
             }
 
